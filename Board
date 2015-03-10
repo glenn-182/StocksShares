@@ -34,4 +34,28 @@ public class Board {
 		}
 	}
 	
+	private int mainMenu()
+	{
+		System.out.println("Stocks and Shares Main Menu");
+		System.out.println("---------------------------");
+		System.out.println("1)	Start New Game");
+		System.out.println("2)	Load Game");
+		System.out.println("---------------------------");
+		System.out.println("0)	Exit");
+		
+		int option = input.nextInt();
+		return option;
+	}
+	
+	public void startMenu()
+	{
+		int option = mainMenu();
+		while (option != 0);
+		{
+			switch (option)
+			{
+				case 1:	run();
+				case 2: loadXML();
+			}
+	}
 }

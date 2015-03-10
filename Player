@@ -1,0 +1,25 @@
+import java.util.ArrayList;
+
+public class Player {
+	
+	private String name;
+	private int money;
+	private int space;
+	private ArrayList<?> commodities;
+
+		public Player(String name, int money)
+		{
+			this.name = name;
+			this.money = money;
+		}
+
+		public void setName(String name)
+		{
+			this.name = name;
+		}
+
+		public String getName()
+		{
+			return name;
+		}
+}

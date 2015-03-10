@@ -1,0 +1,33 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+public class Board {
+
+	private Scanner input;
+
+	public static void main(String[] args)
+	{
+		Board app = new Board();
+		app.run();
+	}
+	
+	public static void startGame()
+	{
+		//System.out.println("How many players?");
+	}
+	
+	public void run()
+	{
+		System.out.println("Welcome to Stocks & Shares");
+		System.out.println("Would you like to play a game? (y/n)");
+		String option = input.next();
+		if (option.toLowerCase().equals("n"))
+		{
+			System.out.println("Goodbye");
+		}
+		else if (option.toLowerCase().equals("y"))
+		{
+			Board.startGame();
+		}
+	}
+	
+}

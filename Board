@@ -28,6 +28,10 @@ public class Board {
 		{
 			Board.startGame();
 		}
+		else
+		{
+			System.out.println("Please enter either (y/n)");
+		}
 	}
 	
 }

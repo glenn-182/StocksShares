@@ -12,19 +12,19 @@ public class Board {
 	
 	public static void startGame()
 	{
-		//System.out.println("How many players?");
+		System.out.println("How many players?");
 	}
 	
 	public void run()
 	{
 		System.out.println("Welcome to Stocks & Shares");
 		System.out.println("Would you like to play a game? (y/n)");
-		String option = input.next();
-		if (option.toLowerCase().equals("n"))
+		char  option = input.next().charAt(0);
+		if ((option == 'n') || (option =='N'))
 		{
 			System.out.println("Goodbye");
 		}
-		else if (option.toLowerCase().equals("y"))
+		else if ((option == 'y') || (option =='Y'))
 		{
 			Board.startGame();
 		}

@@ -22,4 +22,29 @@ public class Player {
 		{
 			return name;
 		}
+                
+                //Sets Money
+		public void setMoney(int money)
+		{
+			this.money = money;
+		}
+		
+		//Gets Money
+		public int getMoney()
+		{
+			return money;
+		}
+		
+		//Adds Money
+		public void addMoney(int money)
+		{
+			this.money += money;
+		}
+		
+		//Removes Money
+		public void removeMoney(int money)
+		{
+			this.money -= money;
+		}
+
 }

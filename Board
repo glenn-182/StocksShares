@@ -39,7 +39,6 @@ public class Board {
 		System.out.println("Stocks and Shares Main Menu");
 		System.out.println("---------------------------");
 		System.out.println("1)	Start New Game");
-		System.out.println("2)	Load Game");
 		System.out.println("---------------------------");
 		System.out.println("0)	Exit");
 		
@@ -55,7 +54,6 @@ public class Board {
 			switch (option)
 			{
 				case 1:	run();
-				case 2: loadXML();
 			}
 	}
 }

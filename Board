@@ -27,20 +27,36 @@ public class Board {
 	{
 		System.out.println("How many players would you like?");
 		int noPlayers = input.nextInt();
+		input.nextLine();
 		for (int i = 0; i < noPlayers; i++)
 		{
+			
 			System.out.println("What is the 1st name of Player " + (i + 1) + "?" );  
 			String name = input.nextLine();
 			Player player = new Player (name, 80);
 			players.add(player);
-			
 		}
-			
+		
+		int l = 0;
+		System.out.println("");
+		for (Player player : players)
+		{
+			System.out.println(player.getName() + " : index" + l);
+			l++;
+		}
+		
 	}
 	
+	public static void playerTurn(Player player)
+	{
+		System.out.println(player.getName() + "'s go");
+		System.out.println("Your card is: ");
+	}
+
 	public void run()
 	{
-		System.out.println("Welcome to Stocks & Shares");
+		System.out.println("##### Welcome to Stocks & Shares #####");
+		System.out.println("");
 		System.out.println("Would you like to play a game? (y/n)");
 		String option = input.nextLine();
 		if (option.toLowerCase().equals("n"))

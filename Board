@@ -41,18 +41,14 @@ public class Board {
 	{
 		System.out.println("Welcome to Stocks & Shares");
 		System.out.println("Would you like to play a game? (y/n)");
-		char  option = input.next().charAt(0);
-		if ((option == 'n') || (option =='N'))
+		String option = input.nextLine();
+		if (option.toLowerCase().equals("n"))
 		{
 			System.out.println("Goodbye");
 		}
-		else if ((option == 'y') || (option =='Y'))
+		else if (option.toLowerCase().equals("y"))
 		{
 			Board.startGame();
-		}
-		else
-		{
-			System.out.println("Please enter either (y/n)");
 		}
 	}
 	

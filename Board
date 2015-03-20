@@ -2,7 +2,14 @@ import java.util.ArrayList;
 import java.util.Scanner;
 public class Board {
 
+	private static ArrayList<Player>players;
 	private Scanner input;
+	private ArrayList<Card> cards;
+	
+	public Board()
+	{
+		cards = new ArrayList<Card>();
+	}
 
 	public static void main(String[] args)
 	{
@@ -10,9 +17,24 @@ public class Board {
 		app.run();
 	}
 	
+	public ArrayList<Card> getCards()
+	{
+		return cards;
+	}
+	
 	public static void startGame()
 	{
-		System.out.println("How many players?");
+		System.out.println("How many players would you like?");
+		int noPlayers = input.nextInt();
+		for (int i = 0; i < noPlayers; i++)
+		{
+			System.out.println("What is the 1st name of Player " + (i + 1) + "?" );  
+			String name = input.nextLine();
+			Player player = new Player (name, 80);
+			players.add(player);
+			
+		}
+			
 	}
 	
 	public void run()

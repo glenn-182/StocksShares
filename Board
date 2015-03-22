@@ -1,14 +1,19 @@
 import java.util.ArrayList;
 import java.util.Scanner;
-public class Board {
+import java.util.Random;
 
+public class Board {
+	
 	private static ArrayList<Player>players;
-	private Scanner input;
-	private ArrayList<Card> cards;
+	private static ArrayList<Card> cards;
+	private static Scanner input;
+	private static Random randomGenerator;
 	
 	public Board()
 	{
 		cards = new ArrayList<Card>();
+		players = new  ArrayList<Player>();
+		randomGenerator = new Random();
 	}
 
 	public static void main(String[] args)
@@ -16,6 +21,11 @@ public class Board {
 		input = new Scanner(System.in);
 		Board app = new Board();
 		app.run();
+	}
+	
+	public void addPlayer(Player player)
+	{
+		player.addPlayer(player);
 	}
 	
 	public ArrayList<Card> getCards()
@@ -41,18 +51,41 @@ public class Board {
 		System.out.println("");
 		for (Player player : players)
 		{
-			System.out.println(player.getName() + " : index" + l);
+			System.out.println(player.getName() + " : index " + l);
 			l++;
 		}
+		System.out.println("Enter the index number of the player whho wants to go first: ");
+		int index = input.nextInt();
+		while (index > 0)
+		{
+			index = index += 0;
+		}
+		while(players.size() > 1)
+		{
+			for (Player player : players)
+			{
+				playerTurn(player);
+			}
+		}
+		
+		
 		
 	}
 	
 	public static void playerTurn(Player player)
 	{
+		
 		System.out.println(player.getName() + "'s go");
-		System.out.println("Your card is: ");
+		generateRandomCard(cards);
+		
 	}
-
+	
+	public static Card generateRandomCard(ArrayList<Card> cards)
+	{
+		int index = randomGenerator.nextInt(cards.size());
+		return cards.get(index);
+	}
+	
 	public void run()
 	{
 		System.out.println("##### Welcome to Stocks & Shares #####");
@@ -74,11 +107,13 @@ public class Board {
 		System.out.println("Stocks and Shares Main Menu");
 		System.out.println("---------------------------");
 		System.out.println("1)	Start New Game");
+		System.out.println("2)	Load Game");
 		System.out.println("---------------------------");
 		System.out.println("0)	Exit");
 		
 		int option = input.nextInt();
 		return option;
+		
 	}
 	
 	public void startMenu()
@@ -89,6 +124,9 @@ public class Board {
 			switch (option)
 			{
 				case 1:	run();
+				
 			}
 	}
+}
+	
 }

@@ -5,10 +5,6 @@ public class Bank {
 	
 	private static ArrayList<Player> players;
 	
-	public Bank(){
-		
-	}
-	
 	public static void startCard()
 	{
 		int choice = randomCard.nextInt(26)+1;

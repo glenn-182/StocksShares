@@ -1,14 +1,18 @@
 import java.util.ArrayList;
 
-public class Player {
+public class Player 
+{
 	
 	private String name;
 	private int money;
 	
+	
+
 		public Player(String name, int money)
 		{
 			this.name = name;
 			this.money = money;
+			
 		}
 
 		public void addPlayer(Player player)
@@ -16,17 +20,19 @@ public class Player {
 			player.addPlayer(player);
 		}
 		
+		//Sets Name
 		public void setName(String name)
 		{
 			this.name = name;
 		}
-
+		
+		//Gets Name
 		public String getName()
 		{
 			return name;
 		}
-                
-                //Sets Money
+
+		//Sets Money
 		public void setMoney(int money)
 		{
 			this.money = money;
@@ -49,5 +55,4 @@ public class Player {
 		{
 			this.money -= money;
 		}
-
 }

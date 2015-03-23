@@ -1,12 +1,30 @@
+import java.util.ArrayList;
+import java.util.Iterator;
+
+
 public class Card {
 	
 	private String cardName;
 	private int cardValue;
-
+	
+	
 	public Card(String cardName, int cardValue)
 	{
-		this.cardName = cardName;
+		this.cardName = "Steel";
+		this.cardName = "Motors";
+		this.cardName = "Stores";
+		this.cardName = "Shipping";
 		this.cardValue = cardValue;
+	}
+
+	public void addCardValue(int cardValue)
+	{
+		this.cardValue += cardValue;
+	}
+	
+	public void removeCardValue(int cardValue)
+	{
+		this.cardValue -= cardValue;
 	}
 
 	public String getCardName()
@@ -24,12 +42,15 @@ public class Card {
 		return cardValue;
 	}
 
+	public void setCardValue(int cardValue)
+	{
+		this.cardValue = cardValue;
+	}
 	
 	public String toString()
 	{
 		return "Card Name: " + cardName
 				+ ", Card Value: " + cardValue;
 	}
-
 
 }

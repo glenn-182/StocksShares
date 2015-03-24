@@ -79,11 +79,9 @@ public class Board {
 	
 	public static void drawCard(Player player)
 	{
-		System.out.println("Would you like to draw a card (y/n)?");
 		String option = input.nextLine();
 		
 		Card card = new Card(option, 0);
-		if (option.toLowerCase().equals("y"))
 		{
 			
 			System.out.println("You card is " + card);
@@ -231,7 +229,7 @@ public class Board {
 		
 	}
 	
-		public static void playerChoiceTurn(Player player)
+	public static void playerChoiceTurn(Player player)
 	{
 		int option = playerTurnMenu();
     	while(option != 0)
@@ -255,6 +253,8 @@ public class Board {
             input.nextLine();
             option = playerTurnMenu();
     	}
+        System.out.println("Exiting... ");
+        System.exit(0);
 	}
 	
 	private static int playerTurnMenu()
@@ -273,7 +273,7 @@ public class Board {
 	
 	public static void sellStock(Player player)
 	{
-		System.out.println("Which stock would you like to see: ");
+		System.out.println("These are the current stock prices: ");
 	}
 	
 	public static void buyStock(Player player)
@@ -288,12 +288,13 @@ public class Board {
 	
 	public static void viewInven(Player player)
 	{
-		
+		System.out.println("This is your current inventory: ");
+		player.getMoney();
 	}
 	
 	public static void endTurn(Player player)
 	{
-		
+		System.out.println(player + " has ended their turn");
 	}
 	
 	public void run()

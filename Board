@@ -77,15 +77,15 @@ public class Board {
 		}
 	}
 	
-	public static void playerTurn(Player player)
+	public static void drawCard(Player player)
 	{
+		System.out.println("Would you like to draw a card (y/n)?");
+		String option = input.nextLine();
 		
-		System.out.println(player.getName() + "'s go");
-		System.out.println("");
-		String option = "";
-		if (players.size() > 1)
+		Card card = new Card(option, 0);
+		if (option.toLowerCase().equals("y"))
 		{
-			Card card = new Card(option, 10);
+			
 			System.out.println("You card is " + card);
 			int choice = randomCard.nextInt(26)+1;
 
@@ -216,9 +216,19 @@ public class Board {
 			case 26:
 				System.out.println("Bear card - All commodities are down by €4");
 				break;
-			} 
-			playerChoiceTurn(player);
+			}
 		}
+	}
+	
+	public static void playerTurn(Player player)
+	{
+		
+		System.out.println(player.getName() + "'s go");
+		System.out.println("");
+		
+		Board.drawCard(player);
+		Board.playerChoiceTurn(player);
+		
 	}
 	
 	public static void playerChoiceTurn(Player player)

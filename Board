@@ -271,27 +271,27 @@ public class Board {
         return option;
 	}
 	
-	public static void sellStock()
+	public static void sellStock(Player player)
 	{
 		System.out.println("Which stock would you like to see: ");
 	}
 	
-	public static void buyStock()
+	public static void buyStock(Player player)
 	{
 		System.out.println("Which stock would you like you to buy: ");
 	}
 	
-	public static void viewStock()
+	public static void viewStock(Player player)
 	{
 		System.out.println("The current stock prices are: ");
 	}
 	
-	public static void viewInven()
+	public static void viewInven(Player player)
 	{
 		
 	}
 	
-	public static void endTurn()
+	public static void endTurn(Player player)
 	{
 		
 	}

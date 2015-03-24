@@ -38,38 +38,43 @@ public class Board {
 		System.out.println("How many players would you like?");
 		int noPlayers = input.nextInt();
 		input.nextLine();
-		for (int i = 0; i < noPlayers; i++)
+		if(noPlayers > 2 || noPlayers <= 4)
 		{
+			for (int i = 0; i < noPlayers; i++)
+			{
+				
+				System.out.println("What is the 1st name of Player " + (i + 1) + "?" );  
+				String name = input.nextLine();
+				Player player = new Player (name, 80);
+				players.add(player);
+			}
 			
-			System.out.println("What is the 1st name of Player " + (i + 1) + "?" );  
-			String name = input.nextLine();
-			Player player = new Player (name, 80);
-			players.add(player);
-		}
-		
-		int l = 0;
-		System.out.println("");
-		for (Player player : players)
-		{
-			System.out.println(player.getName() + " : index " + l);
-			l++;
-		}
-		System.out.println("Enter the index number of the player whho wants to go first: ");
-		int index = input.nextInt();
-		while (index > 0)
-		{
-			index = index += 0;
-		}
-		while(players.size() > 1)
-		{
+			int l = 0;
+			System.out.println("");
 			for (Player player : players)
 			{
-				playerTurn(player);
+				System.out.println(player.getName() + " : index " + l);
+				l++;
+			}
+			System.out.println("Enter the index number of the player whho wants to go first: ");
+			int index = input.nextInt();
+			while (index > 0)
+			{
+				index = index += 0;
+			}
+			while(players.size() > 1)
+			{
+				for (Player player : players)
+				{
+					playerTurn(player);
+				}
 			}
 		}
-		
-		
-		
+		else 
+		{
+			System.out.println("Number of players must be 3-4");
+			startGame();
+		}
 	}
 	
 	public static void playerTurn(Player player)
@@ -211,14 +216,71 @@ public class Board {
 			case 26:
 				System.out.println("Bear card - All commodities are down by €4");
 				break;
-			}
-			
+			} 
+			playerChoiceTurn(player);
 		}
-		
+	}
+	
+	public static void playerChoiceTurn(Player player)
+	{
+		int option = playerTurnMenu();
+    	while(option != 0)
+    	{
+    		switch(option)
+    		{
+    			case 1:		viewInven();
+    						break;
+    			case 2: 	viewStock();
+    						break;
+    			case 3: 	buyStock();
+    						break;
+    			case 4: 	sellStock();
+    						break;
+    			case 5:		endTurn();
+    			default:	System.out.println("Invalid option entered: " + option);
+    						break;
+    		}
+    	}
+	}
+	
+	private static int playerTurnMenu()
+	{
+		System.out.println("***");
+		System.out.println("1) View your inventory");
+		System.out.println("2) View current stock prices");
+		System.out.println("3) Buy stock");
+		System.out.println("4) Sell stock");
+		System.out.println("5) End your turn");
+		System.out.println("0) Quit the game");
+		System.out.println("***");
+        int option = input.nextInt();
+        return option;
+	}
+	
+	public static void sellStock()
+	{
+		System.out.println("Which stock would you like to see: ");
+	}
+	
+	public static void buyStock()
+	{
+		System.out.println("Which stock would you like you to buy: ");
+	}
+	
+	public static void viewStock()
+	{
+		System.out.println("The current stock prices are: ");
+	}
+	
+	public static void viewInven()
+	{
 		
 	}
 	
-	
+	public static void endTurn()
+	{
+		
+	}
 	
 	public void run()
 	{
@@ -235,32 +297,4 @@ public class Board {
 			Board.startGame();
 		}
 	}
-	
-	private int mainMenu()
-	{
-		System.out.println("Stocks and Shares Main Menu");
-		System.out.println("---------------------------");
-		System.out.println("1)	Start New Game");
-		System.out.println("2)	Load Game");
-		System.out.println("---------------------------");
-		System.out.println("0)	Exit");
-		
-		int option = input.nextInt();
-		return option;
-		
-	}
-	
-	public void startMenu()
-	{
-		int option = mainMenu();
-		while (option != 0);
-		{
-			switch (option)
-			{
-				case 1:	run();
-				
-			}
-	}
-}
-	
 }

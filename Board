@@ -231,25 +231,29 @@ public class Board {
 		
 	}
 	
-	public static void playerChoiceTurn(Player player)
+		public static void playerChoiceTurn(Player player)
 	{
 		int option = playerTurnMenu();
     	while(option != 0)
     	{
     		switch(option)
     		{
-    			case 1:		viewInven();
+    			case 1:		viewInven(player);
     						break;
-    			case 2: 	viewStock();
+    			case 2: 	viewStock(player);
     						break;
-    			case 3: 	buyStock();
+    			case 3: 	buyStock(player);
     						break;
-    			case 4: 	sellStock();
+    			case 4: 	sellStock(player);
     						break;
-    			case 5:		endTurn();
+    			case 5:		endTurn(player);
     			default:	System.out.println("Invalid option entered: " + option);
     						break;
     		}
+            System.out.println("\nPress any key to continue...");
+            input.nextLine();
+            input.nextLine();
+            option = playerTurnMenu();
     	}
 	}
 	

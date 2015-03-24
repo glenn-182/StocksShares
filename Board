@@ -38,7 +38,7 @@ public class Board {
 		System.out.println("How many players would you like?");
 		int noPlayers = input.nextInt();
 		input.nextLine();
-		if(noPlayers > 2 || noPlayers <= 4)
+		if(noPlayers > 2 && noPlayers <= 4)
 		{
 			for (int i = 0; i < noPlayers; i++)
 			{

@@ -49,18 +49,10 @@ public class Board {
 				players.add(player);
 			}
 			
-			int l = 0;
 			System.out.println("");
 			for (Player player : players)
 			{
-				System.out.println(player.getName() + " : index " + l);
-				l++;
-			}
-			System.out.println("Enter the index number of the player whho wants to go first: ");
-			int index = input.nextInt();
-			while (index > 0)
-			{
-				index = index += 0;
+				System.out.println(player.getName());
 			}
 			while(players.size() > 1)
 			{
@@ -79,8 +71,8 @@ public class Board {
 	
 	public static void drawCard(Player player)
 	{
+		System.out.println("Press any key to draw a card: ");
 		String option = input.nextLine();
-		
 		Card card = new Card(option, 10);
 		{
 			
@@ -220,7 +212,7 @@ public class Board {
 	
 	public static void playerTurn(Player player)
 	{
-		
+		System.out.println("");
 		System.out.println(player.getName() + "'s go");
 		System.out.println("");
 		
@@ -260,12 +252,12 @@ public class Board {
 	private static int playerTurnMenu()
 	{
 		System.out.println("***");
-		System.out.println("1) View your inventory");
-		System.out.println("2) View current stock prices");
-		System.out.println("3) Buy stock");
-		System.out.println("4) Sell stock");
-		System.out.println("5) End your turn");
-		System.out.println("0) Quit the game");
+		System.out.println("1)	View your inventory");
+		System.out.println("2)	View current stock prices");
+		System.out.println("3)	Buy stock");
+		System.out.println("4)	Sell stock");
+		System.out.println("5)	End your turn");
+		System.out.println("0)	Quit the game");
 		System.out.println("***");
         int option = input.nextInt();
         return option;
@@ -279,6 +271,10 @@ public class Board {
 	public static void buyStock(Player player)
 	{
 		System.out.println("Which stock would you like you to buy: ");
+		System.out.println("1)	Steel");
+		System.out.println("2)	Motors");
+		System.out.println("3)	Stores");
+		System.out.println("4)	Shipping");
 	}
 	
 	public static void viewStock(Player player)
@@ -289,7 +285,8 @@ public class Board {
 	public static void viewInven(Player player)
 	{
 		System.out.println("This is your current inventory: ");
-		player.getMoney();
+		System.out.println(player.getName() +"'s Income: " + player.getMoney());
+		System.out.println("Stock that you own: ");
 	}
 	
 	public static void endTurn(Player player)

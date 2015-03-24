@@ -81,7 +81,7 @@ public class Board {
 	{
 		String option = input.nextLine();
 		
-		Card card = new Card(option, 0);
+		Card card = new Card(option, 10);
 		{
 			
 			System.out.println("You card is " + card);

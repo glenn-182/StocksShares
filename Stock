@@ -1,0 +1,44 @@
+import java.util.ArrayList;
+
+
+public class Stock {
+		private String stockName;
+		private int stockValue;
+	
+	
+		public Stock(String stockName, int stockValue)
+		{
+			this.stockName = stockName;
+			this.stockValue = stockValue;
+		}
+
+		public String getStockName(String stockName)
+		{
+			return stockName;
+		}
+
+		public void setStockName()
+		{
+			this.stockName = stockName;
+		}
+
+		public int getStockValue(int stockValue)
+		{
+			return stockValue;
+		}
+
+		public void setStockValue()
+		{
+			this.stockValue = stockValue;
+		}
+
+		public void addStockValue(int cardValue)
+		{
+			this.stockValue += stockValue;
+		}
+
+		public void removeStockValue(int cardValue)
+		{
+			this.stockValue -= stockValue;
+		}
+}

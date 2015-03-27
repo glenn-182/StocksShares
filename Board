@@ -33,6 +33,11 @@ public class Board {
 		return cards;
 	}
 	
+	public ArrayList<Stock> getStock()
+	{
+		return stocks;
+	}
+
 	public static void startGame()
 	{
 		System.out.println("How many players would you like?");
